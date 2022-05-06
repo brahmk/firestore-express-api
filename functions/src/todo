@@ -1,0 +1,3 @@
+gateway.js sets up connection connects to db, export db =>  export get collections using db=>
+fishes.js all my functions getFish deleteFish etc to plug into API 
+put res.send/error handling in functions? 

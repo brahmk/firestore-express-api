@@ -1,18 +1,17 @@
-const functions = require("firebase-functions");
-const express = require('express');
+import functions from "firebase-functions";
+import express from 'express';
+import { getFishes } from "./src/fish.js";
 
 
 const app = express();
 
 app.get('/test', (req, res) => {
-    res.send('TEST SUCCESSFUL') //send to html containers?
-})
-app.get('/', (req, res) => {
-    res.send('🏚')
+    res.send('TEST SUCCESSFUL') 
 })
 
+app.get('/fish',  getFishes)
 
-exports.app = functions.https.onRequest(app); //replaces app.listen w port - google handles
+export const api = functions.https.onRequest(app); //replaces app.listen w port - google handles
 
 
 
